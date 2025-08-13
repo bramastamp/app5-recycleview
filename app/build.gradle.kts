@@ -1,3 +1,5 @@
+import com.android.tools.r8.internal.iM
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -32,6 +34,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    viewBinding {
+        enable = true
     }
 }
 
