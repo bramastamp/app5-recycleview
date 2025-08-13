@@ -15,10 +15,10 @@ class SplashActivity : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.logo_anim)
         logo.startAnimation(animation)
 
-        // Delay pindah ke MainActivity
+        // Pindah ke MainActivity setelah animasi selesai
         logo.postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 2000) // 2 detik
+        }, 2000)
     }
 }

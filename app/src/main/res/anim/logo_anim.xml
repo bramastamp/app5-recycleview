@@ -2,18 +2,34 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:interpolator="@android:anim/accelerate_decelerate_interpolator">
 
+    <!-- Gerak dari bawah -->
+    <translate
+        android:fromYDelta="100%"
+        android:toYDelta="0%"
+        android:duration="1500" />
+
+    <!-- Perbesar -->
     <scale
-        android:duration="1500"
         android:fromXScale="0.5"
         android:fromYScale="0.5"
         android:toXScale="1.0"
         android:toYScale="1.0"
         android:pivotX="50%"
-        android:pivotY="50%" />
+        android:pivotY="50%"
+        android:duration="1500" />
 
+    <!-- Rotasi -->
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="360"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="1500" />
+
+    <!-- Fade in -->
     <alpha
-        android:duration="1500"
         android:fromAlpha="0.0"
-        android:toAlpha="1.0" />
+        android:toAlpha="1.0"
+        android:duration="1500" />
 
 </set>
