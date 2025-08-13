@@ -1,4 +1,4 @@
-package com.smkth.app4_recycleview
+package com.smkth.app4_recycleview.model
 
 data class Book(
     val judul: String,

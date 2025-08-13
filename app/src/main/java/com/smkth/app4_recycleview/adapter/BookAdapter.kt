@@ -1,4 +1,4 @@
-package com.smkth.app4_recycleview
+package com.smkth.app4_recycleview.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.smkth.app4_recycleview.model.Book
+import com.smkth.app4_recycleview.R
 
 class BookAdapter(
     private val books: MutableList<Book>
@@ -33,7 +35,6 @@ class BookAdapter(
         holder.tvYear.text = book.tahun
         holder.imgBook.setImageResource(R.drawable.book)
 
-        // Hapus item ketika tombol ditekan
         holder.btnDelete.setOnClickListener {
             books.removeAt(position)
             notifyItemRemoved(position)
