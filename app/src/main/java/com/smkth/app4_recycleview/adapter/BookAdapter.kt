@@ -53,10 +53,20 @@ class BookAdapter(
 
         // Hapus item ketika tombol ditekan
         holder.btnDelete.setOnClickListener {
-            books.removeAt(position)
-            notifyItemRemoved(position)
-            notifyItemRangeChanged(position, books.size)
+            // Buat dialog konfirmasi
+            androidx.appcompat.app.AlertDialog.Builder(context)
+                .setTitle("Konfirmasi Hapus")
+                .setMessage("Apakah Anda yakin ingin menghapus \"${book.judul}\"?")
+                .setPositiveButton("Ya") { _, _ ->
+                    books.removeAt(position)
+                    notifyItemRemoved(position)
+                    notifyItemRangeChanged(position, books.size)
+                    Toast.makeText(context, "Buku dihapus", Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Batal", null)
+                .show()
         }
+
     }
 
     override fun getItemCount(): Int = books.size
