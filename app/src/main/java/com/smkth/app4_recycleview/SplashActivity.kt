@@ -12,10 +12,9 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val logo = findViewById<ImageView>(R.id.logoImage)
-        val animation = AnimationUtils.loadAnimation(this, R.anim.logo_anim)
-        logo.startAnimation(animation)
+        val anim = AnimationUtils.loadAnimation(this, R.anim.logo_anim)
+        logo.startAnimation(anim)
 
-        // Pindah ke MainActivity setelah animasi selesai
         logo.postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
