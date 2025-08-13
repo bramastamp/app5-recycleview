@@ -2,8 +2,8 @@ package com.smkth.app4_recycleview
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -11,11 +11,14 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Delay 3 detik sebelum masuk MainActivity
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish() // Tutup Splash agar tidak bisa kembali
-        }, 3000)
+        val logo = findViewById<ImageView>(R.id.logoImage)
+        val animation = AnimationUtils.loadAnimation(this, R.anim.logo_anim)
+        logo.startAnimation(animation)
+
+        // Delay pindah ke MainActivity
+        logo.postDelayed({
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }, 2000) // 2 detik
     }
 }
