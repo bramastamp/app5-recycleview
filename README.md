@@ -49,4 +49,15 @@ Kode tersebut merupakan implementasi dari fungsi onBindViewHolder dalam Recycler
 (penjelasan)  
 
 
-## ✨ Output  
+## ✨ Hasil
+**Splash Screen**
+![1000210503](https://github.com/user-attachments/assets/29c1d0e8-fea9-4a0b-be92-6fed7983b52b)
+
+**Halaman Utama**
+![1000210512](https://github.com/user-attachments/assets/78303518-bf17-42f4-95b8-734f5406f9c9)
+
+**Dialog Box**
+![1000210509](https://github.com/user-attachments/assets/2321f253-e2cc-41bf-a7e6-2b1810924582)
+
+**Detail**
+![1000210505](https://github.com/user-attachments/assets/4e3a14b3-c7dc-4b69-a4b1-88f803095989)
