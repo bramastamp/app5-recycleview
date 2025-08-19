@@ -24,6 +24,7 @@ Untuk file layout splashscreen ada activity_splash.xml, fungsinya untuk menentuk
 **📂 RecyclerView**   
 
 <img width="602" height="133" alt="Screenshot 2025-08-19 183506" src="https://github.com/user-attachments/assets/500ec1ed-cddb-42e0-8d5c-16b17c78a409" />  
+
 Kode tersebut merupakan deklarasi komponen RecyclerView di dalam file layout XML Android. RecyclerView adalah widget yang digunakan untuk menampilkan daftar data dalam jumlah banyak secara lebih efisien dibandingkan ListView. Pada kode ini, diberikan atribut android:id="@+id/recyclerView" yang berfungsi sebagai identitas unik sehingga RecyclerView dapat diakses dan dihubungkan dengan kode Kotlin/Java pada Activity atau Fragment. Sementara itu, atribut android:layout_width="match_parent" dan android:layout_height="match_parent" berarti ukuran RecyclerView akan menyesuaikan penuh dengan lebar dan tinggi layar (mengisi seluruh area yang tersedia). Dengan pengaturan ini, RecyclerView siap digunakan untuk menampilkan daftar item buku dalam bentuk list atau grid sesuai kebutuhan aplikasi.
 
 
