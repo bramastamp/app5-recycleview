@@ -13,7 +13,7 @@ Ini adalah proyek sederhana untuk belajar RecyclerView menggunakan Git & Android
 ## 📂 SplashScreen  
 <img width="1053" height="566" alt="Screenshot 2025-08-19 181638" src="https://github.com/user-attachments/assets/6e6181ff-f4e2-4da9-9144-420d81fb9106" />
 (Penjelasan)  
-Untuk file layout splashscreen ada activity_splash.xml, fungsinya untuk memnetukan tampilan layar pembuka (splashscreen) saat aplikasi pertama kali dijalankan.  
+Untuk file layout splashscreen ada activity_splash.xml, fungsinya untuk menentukan tampilan layar pembuka (splashscreen) saat aplikasi pertama kali dijalankan.  
 ## 📂 RecyclerView   
 <img width="602" height="133" alt="Screenshot 2025-08-19 183506" src="https://github.com/user-attachments/assets/500ec1ed-cddb-42e0-8d5c-16b17c78a409" />  
 (penjelasan)
