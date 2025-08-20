@@ -1,6 +1,6 @@
 package com.smkth.app4_recycleview.model
 
-data class Book(
+data class Buku(
     val id: Int,
     val judul: String,
     val penulis: String,

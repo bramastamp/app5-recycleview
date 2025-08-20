@@ -10,13 +10,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.smkth.app4_recycleview.model.Book
+import com.smkth.app4_recycleview.model.Buku
 import com.smkth.app4_recycleview.R
 import com.smkth.app4_recycleview.DetailActivity
 
 class BukuAdapter(
     private val context: Context,
-    private val books: MutableList<Book>
+    private val bukus: MutableList<Buku>
 ) : RecyclerView.Adapter<BukuAdapter.BookViewHolder>() {
 
     class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,7 +34,7 @@ class BukuAdapter(
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book = books[position]
+        val book = bukus[position]
         holder.tvTitle.text = book.judul
         holder.tvAuthor.text = book.penulis
         holder.tvYear.text = book.tahun
@@ -58,9 +58,9 @@ class BukuAdapter(
                 .setTitle("Konfirmasi Hapus")
                 .setMessage("Apakah Anda yakin ingin menghapus \"${book.judul}\"?")
                 .setPositiveButton("Ya") { _, _ ->
-                    books.removeAt(position)
+                    bukus.removeAt(position)
                     notifyItemRemoved(position)
-                    notifyItemRangeChanged(position, books.size)
+                    notifyItemRangeChanged(position, bukus.size)
                     Toast.makeText(context, "Buku dihapus", Toast.LENGTH_SHORT).show()
                 }
                 .setNegativeButton("Batal", null)
@@ -69,5 +69,5 @@ class BukuAdapter(
 
     }
 
-    override fun getItemCount(): Int = books.size
+    override fun getItemCount(): Int = bukus.size
 }

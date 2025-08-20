@@ -4,15 +4,14 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.smkth.app4_recycleview.model.Book
 
-class BookDetailActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_buku)
 
         val imgBook: ImageView = findViewById(R.id.imgBookDetail)
-        val tvTitle: TextView = findViewById(R.id.tvTitleDetail)
+        val tvJudul: TextView = findViewById(R.id.tvTitleDetail)
         val tvAuthor: TextView = findViewById(R.id.tvAuthorDetail)
         val tvYear: TextView = findViewById(R.id.tvYearDetail)
 
