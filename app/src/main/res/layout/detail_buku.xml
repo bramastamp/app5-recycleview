@@ -32,4 +32,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tahun Terbit" />
+
+    <!-- Gambar Buku -->
+    <ImageView
+        android:id="@+id/ivCoverDetail"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="Cover Buku" />
+
 </LinearLayout>
