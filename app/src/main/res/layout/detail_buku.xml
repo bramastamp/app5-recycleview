@@ -7,7 +7,7 @@
     android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookDetailActivity">
+    tools:context=".DetailActivity">
 
     <ImageView
         android:id="@+id/ivCoverDetail"
@@ -17,14 +17,14 @@
         android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/tvTitleDetail"
+        android:id="@+id/tvJudulDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
+        android:layout_marginTop="16dp"
         android:text="Judul Buku"
+        android:textAlignment="center"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvPenulisDetail"
@@ -35,7 +35,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tvYearDetail"
+        android:id="@+id/tvTahunDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"

@@ -1,73 +1,74 @@
 package com.smkth.app4_recycleview.adapter
 
-import android.content.Context
+import android.app.AlertDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.smkth.app4_recycleview.model.Buku
+import com.bumptech.glide.Glide
 import com.smkth.app4_recycleview.R
+import com.smkth.app4_recycleview.model.Buku
 import com.smkth.app4_recycleview.DetailActivity
 
 class BukuAdapter(
-    private val context: Context,
-    private val bukus: MutableList<Buku>
-) : RecyclerView.Adapter<BukuAdapter.BookViewHolder>() {
+    private val listBuku: List<Buku>
+) : RecyclerView.Adapter<BukuAdapter.BukuViewHolder>() {
 
-    class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgBook: ImageView = itemView.findViewById(R.id.imgBook)
-        val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
-        val tvAuthor: TextView = itemView.findViewById(R.id.tvAuthor)
-        val tvYear: TextView = itemView.findViewById(R.id.tvYear)
-        val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
+    override fun getItemCount(): Int = listBuku.size
+
+    class BukuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvJudul: TextView = itemView.findViewById(R.id.tvJudul)
+        val tvPenulis: TextView = itemView.findViewById(R.id.tvPenulis)
+        val ivCover: ImageView = itemView.findViewById(R.id.ivCover)
+        val tvTahun: TextView = itemView.findViewById(R.id.tvTahun)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BukuViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_buku, parent, false)
-        return BookViewHolder(view)
+        return BukuViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book = bukus[position]
-        holder.tvTitle.text = book.judul
-        holder.tvAuthor.text = book.penulis
-        holder.tvYear.text = book.tahun
-        holder.imgBook.setImageResource(R.drawable.book)
+    override fun onBindViewHolder(holder: BukuViewHolder, position: Int) {
+        val buku = listBuku[position]
+        holder.tvJudul.text = buku.judul
+        holder.tvPenulis.text = buku.penulis
+        holder.tvTahun.text = buku.tahun
 
-        // Klik item → buka detail
+        Glide.with(holder.itemView.context)
+            .load(buku.cover)
+            .into(holder.ivCover)
+
+        // klik item
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, "Memilih: ${book.judul}", Toast.LENGTH_SHORT).show()
+            val context = holder.itemView.context
+            AlertDialog.Builder(context)
+                .setTitle("Pilih Buku?")
+                .setMessage("Apakah kamu ingin membuka detail buku \"${buku.judul}\"?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    Toast.makeText(
+                        context,
+                        "Kamu membuka: ${buku.judul}",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
-            val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("title", book.judul)
-            intent.putExtra("author", book.penulis)
-            intent.putExtra("year", book.tahun)
-            context.startActivity(intent)
-        }
-
-        // Hapus item ketika tombol ditekan
-        holder.btnDelete.setOnClickListener {
-            // Buat dialog konfirmasi
-            androidx.appcompat.app.AlertDialog.Builder(context)
-                .setTitle("Konfirmasi Hapus")
-                .setMessage("Apakah Anda yakin ingin menghapus \"${book.judul}\"?")
-                .setPositiveButton("Ya") { _, _ ->
-                    bukus.removeAt(position)
-                    notifyItemRemoved(position)
-                    notifyItemRangeChanged(position, bukus.size)
-                    Toast.makeText(context, "Buku dihapus", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(context, DetailActivity::class.java).apply {
+                        putExtra("judul", buku.judul)
+                        putExtra("penulis", buku.penulis)
+                        putExtra("tahun", buku.tahun)
+                        putExtra("cover", buku.cover)
+                    }
+                    context.startActivity(intent)
+                    dialog.dismiss()
                 }
-                .setNegativeButton("Batal", null)
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                }
                 .show()
         }
-
     }
-
-    override fun getItemCount(): Int = bukus.size
 }

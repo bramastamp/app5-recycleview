@@ -4,25 +4,25 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 
 class DetailActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_buku)
 
-        val imgBook: ImageView = findViewById(R.id.imgBookDetail)
-        val tvJudul: TextView = findViewById(R.id.tvTitleDetail)
-        val tvAuthor: TextView = findViewById(R.id.tvAuthorDetail)
-        val tvYear: TextView = findViewById(R.id.tvYearDetail)
+        val tvJudul: TextView = findViewById(R.id.tvJudulDetail)
+        val tvPenulis: TextView = findViewById(R.id.tvPenulisDetail)
+        val tvTahun: TextView = findViewById(R.id.tvTahunDetail)
+        val ivCover: ImageView = findViewById(R.id.ivCoverDetail)
 
-        // Ambil data dari intent
-        val title = intent.getStringExtra("title")
-        val author = intent.getStringExtra("author")
-        val year = intent.getStringExtra("year")
+        tvJudul.text = intent.getStringExtra("judul")
+        tvPenulis.text = intent.getStringExtra("penulis")
+        tvTahun.text = intent.getStringExtra("tahun")
 
-        imgBook.setImageResource(R.drawable.book)
-        tvTitle.text = title
-        tvAuthor.text = author
-        tvYear.text = year
+        Glide.with(this)
+            .load(intent.getStringExtra("cover"))
+            .into(ivCover)
     }
 }
