@@ -4,8 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.smkth.app4_recycleview.adapter.BookAdapter
-import com.smkth.app4_recycleview.utils.DummyData
+import com.smkth.app4_recycleview.adapter.BukuAdapter
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = BookAdapter(this, DummyData.getBooks())
+        recyclerView.adapter = BukuAdapter(this, DummyData.getBooks())
 
     }
 }
