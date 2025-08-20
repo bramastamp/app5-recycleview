@@ -12,12 +12,12 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.smkth.app4_recycleview.model.Book
 import com.smkth.app4_recycleview.R
-import com.smkth.app4_recycleview.BookDetailActivity
+import com.smkth.app4_recycleview.DetailActivity
 
-class BookAdapter(
+class BukuAdapter(
     private val context: Context,
     private val books: MutableList<Book>
-) : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
+) : RecyclerView.Adapter<BukuAdapter.BookViewHolder>() {
 
     class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgBook: ImageView = itemView.findViewById(R.id.imgBook)
@@ -29,7 +29,7 @@ class BookAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_book, parent, false)
+            .inflate(R.layout.item_buku, parent, false)
         return BookViewHolder(view)
     }
 
@@ -44,7 +44,7 @@ class BookAdapter(
         holder.itemView.setOnClickListener {
             Toast.makeText(context, "Memilih: ${book.judul}", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(context, BookDetailActivity::class.java)
+            val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("title", book.judul)
             intent.putExtra("author", book.penulis)
             intent.putExtra("year", book.tahun)

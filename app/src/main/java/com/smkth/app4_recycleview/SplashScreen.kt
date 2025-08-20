@@ -6,10 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
-class SplashActivity : AppCompatActivity() {
+class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        setContentView(R.layout.activity_splash_screen)
 
         // Delay 3 detik sebelum masuk MainActivity
         Handler(Looper.getMainLooper()).postDelayed({
