@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.smkth.app4_recycleview.R.id.ivCoverDetail
 import com.smkth.app4_recycleview.model.Book
+import com.bumptech.glide.Glide
 
 class BookDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +17,7 @@ class BookDetailActivity : AppCompatActivity() {
         val tvTitle: TextView = findViewById(R.id.tvTitleDetail)
         val tvAuthor: TextView = findViewById(R.id.tvAuthorDetail)
         val tvYear: TextView = findViewById(R.id.tvYearDetail)
+        val ivCover: ImageView = findViewById(ivCoverDetail)
 
         // Ambil data dari intent
         val title = intent.getStringExtra("title")
@@ -25,5 +28,9 @@ class BookDetailActivity : AppCompatActivity() {
         tvTitle.text = title
         tvAuthor.text = author
         tvYear.text = year
+
+        Glide.with(this)
+            .load(intent.getStringExtra("cover"))
+            .into(ivCover)
     }
 }
