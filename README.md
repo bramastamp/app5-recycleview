@@ -47,15 +47,15 @@
 
 
 ## ✨ Hasil
-**Splash Screen**
+**Splash Screen**  
 ![WhatsApp Image 2025-08-25 at 16 49 27](https://github.com/user-attachments/assets/59a7cc52-343d-42cd-807a-edaea7dea852)
 
 
-**Halaman Utama**
+**Halaman Utama**  
 
 
 
 
-**Detail**
+**Detail**  
 
 
