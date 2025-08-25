@@ -15,8 +15,12 @@
 ## 📱 Fitur yang ada
 **📂 SplashScreen**  
 <img width="921" height="537" alt="Screenshot 2025-08-25 162616" src="https://github.com/user-attachments/assets/5be573f9-7aa5-4120-a4a6-ee38fc0fbb0f" />  
+Kode di atas merupakan file layout XML untuk halaman Splash Screen pada aplikasi Android. Layout utamanya menggunakan `LinearLayout` dengan atribut `match_parent` pada lebar dan tinggi sehingga memenuhi layar penuh, orientasi `vertical`, gravitasi `center` untuk memusatkan elemen, dan latar belakang berwarna biru (#2196F3). Di dalamnya terdapat komponen `ImageView` dengan ukuran 120dp x 120dp yang menampilkan gambar dari folder drawable bernama `logo_tunas` serta memiliki deskripsi konten “Logo Tunas” untuk mendukung aksesibilitas. Struktur ini digunakan untuk menampilkan logo aplikasi saat pertama kali dijalankan.
+
 
 <img width="1078" height="783" alt="Screenshot 2025-08-25 163315" src="https://github.com/user-attachments/assets/0bc86384-997f-4ea4-9c1f-f4520d438ea5" />  
+Kode di atas merupakan class `SplashScreen` pada aplikasi Android yang ditulis menggunakan Kotlin dan mewarisi `AppCompatActivity`. Pada metode `onCreate`, layout yang digunakan adalah `activity_splash_screen`. Terdapat pengaturan tampilan dengan `ViewCompat.setOnApplyWindowInsetsListener` untuk menyesuaikan padding sesuai dengan sistem bar perangkat agar tampilan tetap rapi di berbagai ukuran layar. Selain itu, digunakan `Handler` dengan `postDelayed` untuk menunda eksekusi selama 2000 milidetik (2 detik), kemudian memulai `MainActivity` menggunakan `Intent` dan menutup `SplashScreen` dengan `finish()`. Fungsionalitas ini umumnya digunakan untuk menampilkan layar pembuka sebelum masuk ke halaman utama aplikasi.
+
 
 **📂 RecyclerView**   
 <img width="1023" height="698" alt="Screenshot 2025-08-25 162647" src="https://github.com/user-attachments/assets/cdb07427-3e86-4534-8253-abc52a3c5029" />  
